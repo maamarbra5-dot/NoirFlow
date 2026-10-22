@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #05090c;
+  --bg-sidebar: #070b0e;
+  --bg-card: #0a1014;
+  --bg-card-hover: #11191e;
+  --bg-input: #080d11;
+  --border-primary: #1d272e;
+  --border-secondary: #29343c;
+  --text-primary: #f5f7f8;
+  --text-secondary: #aab5be;
+  --text-muted: #72808a;
+  --accent-green: #81c9a0;
+  --accent-orange: #e8a06b;
+  --accent-red: #e17c7c;
+  --accent-purple: #b6a0ed;
+  --accent-blue: #8faebe;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1d272e transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #1d272e;
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #29343c;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Custom checkbox */
+.noir-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--border-secondary);
+  border-radius: 4px;
+  background: var(--bg-input);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.noir-checkbox:hover {
+  border-color: var(--accent-green);
+}
+
+.noir-checkbox:checked {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+}
+
+.noir-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--bg-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
